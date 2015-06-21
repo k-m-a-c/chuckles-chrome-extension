@@ -18,11 +18,16 @@
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+        background-image:url("public/bttf.png");
+        background-size: 400px;
       }
+
+
 
       .container{
         position: relative;
         width: 270px;
+
 
       }
 
@@ -35,7 +40,7 @@
 
       .audio-button{
          position:absolute;
-         top:0;
+         top:25px;
          right:0;
          float: right;
 
@@ -46,7 +51,7 @@
         white-space: pre;
         text-overflow: ellipsis;
         overflow: hidden;
-        max-width: 400px;
+        max-width: 370px;
       }
     </style>
 
@@ -70,7 +75,7 @@
         <audio id="broadcast" preload="auto">
           <source src="/evil-laugh.mp3" type="audio/mp3">
         </audio>
-        <button id='control' ><img src='public/play.png' alt='play button' height="40px" width="64px"></button>
+        <button id='control' ><img src='public/play.png' alt='play button' height="43px" width="64px"></button>
         <button> <img src="public/Pause-icon.png" alt="pause button" height="60%" width="60%"></button>
       </div>
     </div>
