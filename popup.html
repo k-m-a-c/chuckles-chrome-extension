@@ -8,29 +8,39 @@
   <head>
     <title>Chuckles | Laughter is the best medicine</title>
     <style>
-
       /*
       ====================
       GLOBAL STYLES
       ====================
       */
-
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+        background-image:url("public/bttf.png");
+        background-size: 400px;
       }
-
-      img {
-        max-height: 5%;
-        max-width: 5%;
+      .container{
+        position: relative;
+        width: 270px;
       }
-
+      .profile-photo{
+        position:absolute;
+        top:0;
+        left:0;
+        float: left;
+      }
+      .audio-button{
+         position:absolute;
+         top:25px;
+         right:0;
+         float: right;
+      }
       #status {
         /* avoid an excessively wide status text */
         white-space: pre;
         text-overflow: ellipsis;
         overflow: hidden;
-        max-width: 400px;
+        max-width: 370px;
       }
     </style>
 
@@ -42,16 +52,31 @@
      -->
     <script src="popup.js"></script>
   </head>
+
   <body>
-    <div class="profile-photo">
-      <img src="" alt="mina's photo">
+
+    <div class="container">
+
+      <div class="profile-photo">
+        <img src="mina.JPEG" alt="Mina" width="80px" height="100px">
+      </div>
+
+      <div class="audio-button">
+        <audio id="broadcast" preload="auto">
+          <source src="/evil-laugh.mp3" type="audio/mp3">
+        </audio>
+
+        <button id='control'>
+          <img src='public/play.png' alt='play button' height="43px" width="64px">
+        </button>
+
+        <button>
+          <img src="public/Pause-icon.png" alt="pause button" height="60%" width="60%">
+        </button>
+
+      </div>
+
     </div>
-    <div class="audio-button">
-      <audio id="broadcast" preload="auto">
-        <source src="/evil-laugh.mp3" type="audio/mp3">
-      </audio>
-      <button id='control'><img src='/play.png' alt='play button'>Play</button>
-    </div>
+
   </body>
 </html>
-
