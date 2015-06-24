@@ -47,29 +47,27 @@ function getCurrentTabUrl(callback) {
   // alert(url); // Shows "undefined", because chrome.tabs.query is async.
 }
 
-if ($.cookie("sound") == "off") {
-    $("#broadcast").get(0).volume = 0;
-}
-else {
-    $("#broadcast").get(0).volume = .05;
-}
-
 var yourAudio = document.getElementById('broadcast'),
     ctrl = document.getElementById('control'),
-    playHTML = "<button id='control'><img src='/play.png'>Play</button>",
-    pauseHTML = "<button id='control'><img src='/pause.png'>Pause</button>";
+    playHTML = '<img src="public/play.png" alt="play button" height="43px" width="64px">',
+    pauseHTML = '<img src="public/Pause-icon.png" alt="pause button" height="60%" width="60%">',
+    isPaused = true;
 
+yourAudio.addEventListener("ended", function () {
+  ctrl.innerHTML = isPaused ? pauseHTML : playHTML;
+  isPaused = !isPaused;
+})
 
 ctrl.onclick = function () {
 
   // Update the Button
-  ctrl.innerHTML = pause ? playHTML : pauseHTML;
+  ctrl.innerHTML = isPaused ? pauseHTML : playHTML;
 
   // Update the Audio
-  var method = pause ? 'pause' : 'play';
+  var method = isPaused ? 'play' : 'pause';
   yourAudio[method]();
 
-  pause = !pause;
+  isPaused = !isPaused;
 
   // Prevent Default Action
   return false;

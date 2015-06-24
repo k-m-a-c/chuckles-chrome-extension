@@ -34,7 +34,7 @@
         left:0;
         float: left;
       }
-      .audio-button {
+      .audio-player {
          position:absolute;
          top:25px;
          right:0;
@@ -47,7 +47,6 @@
         overflow: hidden;
         max-width: 370px;
       }
-
     </style>
 
     <!--
@@ -56,7 +55,6 @@
       -
       - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
      -->
-    <script src="popup.js"></script>
   </head>
 
   <body>
@@ -67,20 +65,24 @@
         <img src="mina.JPEG" alt="Mina" width="80px" height="100px">
       </div>
 
-      <div class="audio-button">
-        <audio id="broadcast" preload="auto">
+      <div class="audio-player">
+
+        <audio id="broadcast" preload="auto" >
           <source src="/evil-laugh.mp3" type="audio/mp3">
         </audio>
 
-        <button id='control'>
-          <img src='public/play.png' alt='play button' height="43px" width="64px">
+        <button id="control">
+          <img src="public/play.png" alt="play button" height="43px" width="64px">
         </button>
 
-        <button>
+<!--         <button>
           <img src="public/Pause-icon.png" alt="pause button" height="60%" width="60%">
-        </button>
+        </button> -->
+
       </div>
+
     </div>
 
+    <script src="popup.js"></script>
   </body>
 </html>
